@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="max-width: 700px;">
 
         <div class="page-header">
             <h1>Self-checkout cash register</h1>
@@ -21,9 +21,22 @@
         </div>
 
         <h3>Overview of the project</h3>
-        <p>The slides of the presentation contain a general overview of the project. <a href="/files/presentation.pdf" class="btn btn-primary">Presentation</a></p>
-        <p>The system is a prototype of a self-checkout cash register for a generic supermarket. The system enables users to
-            identify themselves and scan the products they bought.</p>
+        <div>
+            <p class="text-justify">To have a general idea about the project you can view <a href="/files/presentation.pdf">the slides of the presentation</a>.</p>
+            <p class="text-justify">The system is a prototype of a self-checkout cash register for a generic supermarket. The system enables users
+                to identify themselves and scan the products they bought.</p>
+            <h4>Client side (board)</h4>
+            <p class="text-justify">The client side is made with the <a href="https://www.ghielectronics.com/catalog/product/432">FEZ Spider II</a> connected to some peripherals. It is the device that allows user to interact with the system, scanning the codes and using the GUI on the touchscreen.</p>
+            <p class="text-justify">For taking better pictures we made a "black box" around the camera, that internally contains some LED lights and has a small window on the top that can be used to expose the barcodes / QRcodes.</p>
+            <p class="text-justify">The role of the client side is to send images to the server, display information on the screen and interact with the buyer, allowing the creation of receipts.</p>
+            <h4>Server side</h4>
+            <p class="text-justify">The server receives images from the client and performs a lookup in the database, returning informations about the user and about the products.</p>
+            <p class="text-justify">It has a basic GUI for logging and to see the pictures sent from the client.</p>
+            <h4>Database</h4>
+            <p class="text-justify">The database is responsible for keeping persistence of the data: it contains the data about the products, the users, the receipts and has some other tables that allow reordering products from the warehouse when the shelves are nearly empty</p>
+            <h4>Website</h4>
+            <p class="text-justify">The website is a useful tool to let the user see their purchase history and the collected points, and allow the administrator to see purchases and to manage the inventory.</p>
+        </div>
 
         <h3>Our roles</h3>
         <div class="row">
@@ -43,15 +56,19 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Martino Mensio</div>
                     <div class="panel-body">Server side development</div>
+                    <div class="panel-footer"><a href="https://martinomensio.github.io">Website</a></div>
                 </div>
             </div>
         </div>
 
+        <h3>Source code</h3>
+        <p>The full project source code is available in <a href="https://github.com/ProjectsAndLaboratory2017/project_source">this repository</a>
 
 
 
-        <script src="/lib/js/jquery.min.js"></script>
-        <script src="/lib/js/bootstrap.min.js"></script>
+
+            <script src="/lib/js/jquery.min.js"></script>
+            <script src="/lib/js/bootstrap.min.js"></script>
 </body>
 
 </html>
